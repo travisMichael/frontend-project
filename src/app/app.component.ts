@@ -16,9 +16,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     console.log("hello");
-    // let result: any = this.http
-    //   .get("http://localhost:8080/events")
-    //   .subscribe(response => this.data = (<any>response)._embedded.events);
+    let result: any = this.http
+      .get("http://localhost:8080/events")
+      .subscribe(response => this.data = (<any>response)._embedded.events);
     // console.log(this.data);
   }
 }
