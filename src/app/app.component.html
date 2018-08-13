@@ -1,39 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <div style="text-align:center">
   <h1>
     612Plan
   </h1>
 </div>
 <app-nav-bar></app-nav-bar>
+<select (change)="onChange($event.target.value)">
+  <option value="MUSIC">Music</option>
+  <option value="ART">Art</option>
+  <option value="CULTURE">Culture</option>
+  <option value="COMEDY">Comedy</option>
+</select>
 <router-outlet></router-outlet>
 <br> <br>
-<!-- <div class="horizaontal-container">
-  <div></div>
-  <div style="text-align:center" *ngFor="let event of data">
-    <br>
-    <app-event [name]="event.name"
-               [description]="event.description"
-               [type]="event.eventType">
-    </app-event>
-    <br>
-    <hr>
-    <!-- <div class="event">
-      {{ event.name }}
-    </div> -->
-
-  <!-- </div>
-</div> -->
 
 <div class="container">
 
-  <div style="text-align:center" *ngFor="let event of data">
+  <div style="text-align:center" *ngFor="let event of data | filter : term">
     <div class="row">
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
         <app-event [name]="event.name"
                  [description]="event.description"
-                 [type]="event.eventType">
+                 [type]="event.type[0].name">
         </app-event>
         <hr>
       </div>
@@ -41,17 +30,3 @@
     </div>
   </div>
 </div>
-
-<!-- <h2>Here are some links to help you start: </h2> -->
-
-<!-- <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul> -->

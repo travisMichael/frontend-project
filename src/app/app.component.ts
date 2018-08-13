@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { FilterPipe } from './pipe/filter-by'
+
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,10 @@ import { HttpClient } from '@angular/common/http'
 })
 export class AppComponent implements OnInit {
   title = 'event-app';
+  originalData = null;
   data = null;
+  animal = null;
+  term: string = null;
 
   constructor(private http:HttpClient) {
     console.log("constructor");
@@ -21,4 +26,10 @@ export class AppComponent implements OnInit {
       .subscribe(response => this.data = (<any>response)._embedded.events);
     // console.log(this.data);
   }
+
+  onChange(toFilterOn: string) {
+    this.term = toFilterOn;
+    console.log(toFilterOn)
+  }
+
 }

@@ -10,6 +10,7 @@ import { FineArtComponent } from './fine-art/fine-art.component';
 import { FoodSpiritsComponent } from './food-spirits/food-spirits.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { EventComponent } from './event/event.component';
+import { FilterPipe } from './pipe/filter-by'
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     FineArtComponent,
     FoodSpiritsComponent,
     SubscribeComponent,
-    EventComponent
+    EventComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
