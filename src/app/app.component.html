@@ -4,29 +4,8 @@
     612Plan
   </h1>
 </div>
-<app-nav-bar></app-nav-bar>
-<select (change)="onChange($event.target.value)">
-  <option value="MUSIC">Music</option>
-  <option value="ART">Art</option>
-  <option value="CULTURE">Culture</option>
-  <option value="COMEDY">Comedy</option>
-</select>
+<nav-bar></nav-bar>
+
+
 <router-outlet></router-outlet>
-<br> <br>
 
-<div class="container">
-
-  <div style="text-align:center" *ngFor="let event of data | filter : term">
-    <div class="row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-10">
-        <app-event [name]="event.name"
-                 [description]="event.description"
-                 [type]="event.type[0].name">
-        </app-event>
-        <hr>
-      </div>
-      <div class="col-sm-1"></div>
-    </div>
-  </div>
-</div>
