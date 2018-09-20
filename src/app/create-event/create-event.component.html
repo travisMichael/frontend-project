@@ -1,1 +1,11 @@
 <p>create event</p>
+<p>Event Name</p>
+<input #box (keyup)="onEnterName(box.value)">
+<p>{{name}}</p>
+<input #box2 (keyup)="onEnterDescription(box2.value)">
+<p>{{description}}</p>
+
+<button (click)="submit()">Submit</button>
+<li *ngFor="let h of history">
+    {{ h }}
+</li>

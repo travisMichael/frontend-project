@@ -1,37 +1,45 @@
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-1">Filter</div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-1"></div>
-  </div>
-  <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-1">Type</div>
-    <div class="col-sm-1"></div>
-  </div>
-  <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-1">ART</div>
-  </div>
-</div>
-<router-outlet></router-outlet>
-<br> <br>
 
-<div class="container">
-
-  <div style="text-align:center" *ngFor="let event of data | filter : term">
-    <div class="row">
+<div class="row">
+  <div class="col-sm-5">
+    <div class="container">
+      <div class="row">
+      <div class="col-sm-1">Filter</div>
       <div class="col-sm-1"></div>
-      <div class="col-sm-10">
-        <app-event [name]="event.name"
-                   [description]="event.description"
-                   [type]="event.type[0].name">
-        </app-event>
-        <hr>
+      <div class="col-sm-1"></div>
       </div>
+      <div class="row">
       <div class="col-sm-1"></div>
+      <div class="col-sm-1">Type</div>
+      <div class="col-sm-1"></div>
+      </div>
+      <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-1">ART</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-7">
+    <div class="container">
+
+      <div style="text-align:center" *ngFor="let event of data | filter : term">
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+            <app-event [name]="event.name"
+                       [description]="event.description"
+                       [type]="">
+            </app-event>
+            <hr>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+
+
